@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="zunze.audit.domain.authority">
+	<class name="Menu" table="T_MENU">
+		<id name="id" column="ID" >
+			<generator class="identity"/>
+		</id>
+		<property name="menuCode" column="CODE"/>
+		<property name="menuName" column="MENUNAME"/>
+	</class>
+	
+	<set name="userSet"
+		table="T_USER_MENU"
+		inverse="true">
+			<key column="MENUID"></key>
+			<many-to-many 
+				name="USER"
+				column="id"/>
+		</set>
+</hibernate-mapping>

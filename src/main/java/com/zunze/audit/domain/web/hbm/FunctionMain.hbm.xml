@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="zunze.audit.domain.web">
+	<class name="FunctionMain" table="T_FUNCTION_MAIN">
+		<id name="id" column="ID">
+			<generator class="identity"/>
+		</id>
+		<property name="fnCode" column="FN_CODE"/>
+		<property name="fnDesc" column="FN_DESC"/>
+		<property name="fnType" column="FN_TYPE"/>
+		<property name="status" column="STATUS"/>
+		<property name="isLeaf" column="ISLEAF"/>
+		<property name="speUrl" column="SPE_URL"/>
+		
+		<set
+			name="mainChild"
+			inverse="true">
+			<key column="PID"/>
+			<one-to-many
+				class="FunctionMain"/>		
+		</set>
+	</class>
+</hibernate-mapping>

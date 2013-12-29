@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="zunze.audit.domain.authority">
+	<class name="ProvinceInfo" table="T_PROVINCEINFO">
+		<id name="id" column="ID">
+			<genertor class="identity"/>
+		</id>
+		<property name="provinceName" column="PROVINCENAME"/>
+		<property name="provinceDataSource" column="PROVINCEDATASOURCE"/>
+	</class>
+	
+</hibernate-mapping> 
