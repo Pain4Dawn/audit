@@ -1,4 +1,4 @@
-package zunze.audit.domain.web;
+package com.zunze.audit.domain.web;
 
 import java.util.HashSet;
 import java.util.Set;

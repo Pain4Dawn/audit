@@ -1,4 +1,4 @@
-package zunze.audit.domain.web;
+package com.zunze.audit.domain.web;
 
 public class FunctionDet {
 	private long id;
