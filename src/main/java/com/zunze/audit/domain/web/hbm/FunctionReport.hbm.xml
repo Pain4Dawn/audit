@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zunze.audit.domain.web">
+	<class name="FunctionReport" table="FUNCTION_REPORT">
+		<one-to-one
+			name="functionDet"
+			class="FunctionDet"/>
+		<id name="id" column="ID">
+			<generator class="foreign">
+				<param name="property">functionDet</param>
+			</generator>
+		</id>
+		
+		<property name="key" column="TABLE_KEY"/>
+		<property name="status" column="STATUS"/>
+		<property name="BaseSQL" column="BASESQL"/>
+		
+		<set name="fields"
+			inverse="true">
+			<key name="REPORT_ID"/>	
+			<one-to-many class="ReportField"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

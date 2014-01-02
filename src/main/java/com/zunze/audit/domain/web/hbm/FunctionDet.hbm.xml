@@ -16,5 +16,8 @@
 			<key name="CONDITION_ID"/>
 			<many-to-one class="Function2Condition"/>
 		</set>
+		<one-to-one name="funcReport"
+			class="FunctionReport"
+			cascade="save-update"/>
 	</class>
 </hibernate-mapping>

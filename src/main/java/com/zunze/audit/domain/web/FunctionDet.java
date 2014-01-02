@@ -11,7 +11,14 @@ public class FunctionDet {
 	private String status;
 	private String fnUrl;
 	private Set<Function2Condition> func2Con = new HashSet<Function2Condition>();
+	private FunctionReport funcReport;
 	
+	public FunctionReport getFuncReport() {
+		return funcReport;
+	}
+	public void setFuncReport(FunctionReport funcReport) {
+		this.funcReport = funcReport;
+	}
 	public Set<Function2Condition> getFunc2Con() {
 		return func2Con;
 	}
