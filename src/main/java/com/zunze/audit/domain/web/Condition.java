@@ -1,5 +1,8 @@
 package com.zunze.audit.domain.web;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Condition {
 	private long id;
 	private String cdtName;
@@ -8,7 +11,14 @@ public class Condition {
 	private String cdtDataType;
 	private String cdtSQL;
 	private String isArea;
+	private Set<Function2Condition> func2Con = new HashSet<Function2Condition>();
 	
+	public Set<Function2Condition> getFunc2Con() {
+		return func2Con;
+	}
+	public void setFunc2Con(Set<Function2Condition> func2Con) {
+		this.func2Con = func2Con;
+	}
 	public long getId() {
 		return id;
 	}
