@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zunze.audit.domain.web">
+	<class name="Function2Condition" table="FUNCTION_CONDITION">
+		<composite-id name="id" class="Function2Condition$Id">
+			<key-property name="functionId"
+				access="field"
+				column="FUNCTION_ID"></key-property>
+			<key-property name="conditionId"
+				access="field"
+				column="CONDITION_ID"></key-property>
+		</composite-id>
+		<property name="columnName"></property>
+		<many-to-one name="condition"
+			column="CONDITION_ID"
+			not-null="true"
+			insert="false"
+			update="false"/>
+		<many-to-one name="funcDet"
+			column="FUNCTION_ID"
+			not-null="true"
+			insert="false"
+			update="false"/>
+	</class>
+</hibernate-mapping>

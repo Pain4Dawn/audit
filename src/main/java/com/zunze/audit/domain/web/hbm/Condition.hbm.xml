@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zunze.audit.domain.web">
+	<class name="Condition" table="T_CONDITION">
+		<id name="id" column="ID">
+			<generator class="identity"/>
+		</id>
+		<property name="cdtName" column="CDT_NAME"></property>
+		<property name="cdtParam" column="CDT_PARAM"></property>
+		<property name="type" column="CDT_TYPE"></property>
+		<property name="cdtDataType" column="CDT_DATA_TYPE"></property>
+		<property name="cdtSQL" column="CDT_SQL"></property>
+		<property name="isArea" column="ISAREA"></property>
+		
+		<set name="func2Con" 
+			inverse="true">
+			<key column="CONDITION_ID"/>
+			<one-to-many class="Function2Condition"/>	
+		</set>
+	</class>
+</hibernate-mapping>

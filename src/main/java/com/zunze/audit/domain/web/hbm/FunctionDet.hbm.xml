@@ -11,5 +11,10 @@
 		<property name="urlType" column="URL_TYPE"/>
 		<property name="status" column="STATUS"/>
 		<property name="fnUrl" column="FN_URL"/>
+		
+		<set name="func2Con" inverse="true">
+			<key name="CONDITION_ID"/>
+			<many-to-one class="Function2Condition"/>
+		</set>
 	</class>
 </hibernate-mapping>
