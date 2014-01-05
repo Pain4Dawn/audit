@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration
+	PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/audit</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.use_outer_join">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!--  
+		<property name="hibernate.transaction.factory_class"></property>
+		-->
+		<mapping resource="com/zunze/audit/domain/authority/hbm/Menu.hbm.xml"/>
+		<mapping resource="com/zunze/audit/domain/authority/hbm/ProvinceInfo.hbm.xml"/>
+		<mapping resource="com/zunze/audit/domain/authority/hbm/Role.hbm.xml"/>
+		<mapping resource="com/zunze/audit/domain/authority/hbm/User.hbm.xml"/>
+		<mapping resource="com/zunze/audit/domain/web/hbm/Condition.hbm.xml"/>
+		<mapping resource="com/zunze/audit/domain/web/hbm/Function2Condition.hbm.xml"/>
+		<mapping resource="com/zunze/audit/domain/web/hbm/FunctionDet.hbm.xml"/>
+		<mapping resource="com/zunze/audit/domain/web/hbm/FunctionMain.hbm.xml"/>
+		<mapping resource="com/zunze/audit/domain/web/hbm/FunctionReport.hbm.xml"/>
+		<mapping resource="com/zunze/audit/domain/web/hbm/ReportField.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
