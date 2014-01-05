@@ -9,7 +9,7 @@ public class FunctionMain {
 	private String fnDesc;
 	private String fnType;
 	private String status;
-	private boolean isLeaf;
+	private String isLeaf;
 	private String speUrl;
 	private long pid;
 	public long getPid() {
@@ -56,10 +56,11 @@ public class FunctionMain {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public boolean isLeaf() {
+	
+	public String getIsLeaf() {
 		return isLeaf;
 	}
-	public void setLeaf(boolean isLeaf) {
+	public void setIsLeaf(String isLeaf) {
 		this.isLeaf = isLeaf;
 	}
 	public String getSpeUrl() {

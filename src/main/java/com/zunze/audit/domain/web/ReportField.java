@@ -2,9 +2,15 @@ package com.zunze.audit.domain.web;
 
 public class ReportField {
 	private long id;
-	private String fieldCode;
+	private String fieldCode; 
 	private String fieldSort;
-	private boolean isHidden;
+	private String isHidden;
+	public String getIsHidden() {
+		return isHidden;
+	}
+	public void setIsHidden(String isHidden) {
+		this.isHidden = isHidden;
+	}
 	private String fieldType;
 	private String fieldNum;
 	private String drillParam;
@@ -26,12 +32,6 @@ public class ReportField {
 	}
 	public void setFieldSort(String fieldSort) {
 		this.fieldSort = fieldSort;
-	}
-	public boolean isHidden() {
-		return isHidden;
-	}
-	public void setHidden(boolean isHidden) {
-		this.isHidden = isHidden;
 	}
 	public String getFieldType() {
 		return fieldType;

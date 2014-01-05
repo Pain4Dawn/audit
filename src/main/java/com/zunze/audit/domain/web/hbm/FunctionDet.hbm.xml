@@ -13,8 +13,8 @@
 		<property name="fnUrl" column="FN_URL"/>
 		
 		<set name="func2Con" inverse="true">
-			<key name="CONDITION_ID"/>
-			<many-to-one class="Function2Condition"/>
+			<key column="CONDITION_ID"/>
+			<one-to-many class="Function2Condition"/>
 		</set>
 		<one-to-one name="funcReport"
 			class="FunctionReport"

@@ -3,14 +3,15 @@
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.zunze.audit.domain.web">
 	<class name="FunctionReport" table="FUNCTION_REPORT">
-		<one-to-one
-			name="functionDet"
-			class="FunctionDet"/>
+		
 		<id name="id" column="ID">
 			<generator class="foreign">
 				<param name="property">functionDet</param>
 			</generator>
 		</id>
+		<one-to-one
+			name="functionDet"
+			class="FunctionDet"/>
 		
 		<property name="key" column="TABLE_KEY"/>
 		<property name="status" column="STATUS"/>
@@ -18,9 +19,8 @@
 		
 		<set name="fields"
 			inverse="true">
-			<key name="REPORT_ID"/>	
+			<key column="REPORT_ID"/>	
 			<one-to-many class="ReportField"/>
 		</set>
-		
 	</class>
 </hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zunze.audit.domain.web">
+	<class name="ReportField" table="T_REPORT_FIELD">
+		
+		<id name="id" column="ID">
+			<generator class="identity"/>
+		</id>		
+		<property name="fieldCode" column="FIELD_CODE"/>
+		<property name="fieldSort" column="FIELD_SORT"/>
+		<property name="isHidden" column="IS_HIDDEN"/>
+		<property name="fieldType" column="FIELD_TYPE"/>
+		<property name="fieldNum" column="FIELD_NUM"/>
+		<property name="drillParam" column="DRILL_PARAM"/>
+	</class>
+</hibernate-mapping>
