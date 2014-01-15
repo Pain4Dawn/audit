@@ -16,7 +16,7 @@
 		<set
 			inverse="true"
 			name="childRoles">
-			<key column="PARENTID"/>
+			<key column="PARENT_ID"/>
 			<one-to-many class="Role"/>
 		</set>
 		

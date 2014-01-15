@@ -40,4 +40,18 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+	/**
+	 * 用户添加角色，如果角色为空，抛出异常 role必须是已经持久化了
+	 * @param role
+	 * @return
+	 */
+	public boolean addRole(Role role){
+		if(role == null){
+			//TODO 异常
+			return false;
+		}
+		this.getRoleSet().add(role);
+		role.getUserSet().add(this);
+		return true;
+	}
 }
