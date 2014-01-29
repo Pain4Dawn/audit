@@ -2,11 +2,20 @@ package com.zunze.audit.DAO;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class BaseHibernateDAOImpl<T>  implements BaseDAO<T>{
 
+	@SuppressWarnings("unused")
+	private SessionFactory sessionFactory;
 	public Session session = null;
 	
+	@Autowired
+	public void setSessionFactory(SessionFactory sessionFactory){
+		this.sessionFactory = sessionFactory;
+		session = sessionFactory.openSession();
+	}
 	public boolean save(T entity) {
 		if(entity == null){
 			//TODO 异常
