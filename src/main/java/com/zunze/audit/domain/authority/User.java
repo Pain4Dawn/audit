@@ -3,6 +3,7 @@ package com.zunze.audit.domain.authority;
 import java.util.HashSet;
 import java.util.Set;
 
+
 public class User {
 	private long id;
 	private String userName;
